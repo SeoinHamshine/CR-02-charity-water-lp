@@ -5,10 +5,10 @@
 
 /* 전체 페이지의 기본 배경색과 글꼴을 설정합니다 */
 body {
-  background-color: #fff9ed; /* 밝은 배경색 */
-  color: #333; /* 기본 글자색 */
-  font-family: 'Proxima Nova', Avenir; /* Proxima Nova 사용 */
-  font-weight: normal; /* 기본은 굵지 않게 */
+  background-color: #FFF7E1; /* 밝은 배경색 */
+  color: #333;
+  font-family: 'Proxima Nova', Avenir;
+  font-weight: normal;
   margin: 0;
   padding: 0;
 }
@@ -19,7 +19,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 20px 24px;
-  background-color: #fff9ed;
+  background-color: #FFF7E1; /* 배경색도 동일하게 수정 */
 }
 
 /* 로고 스타일 */
