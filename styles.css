@@ -40,7 +40,10 @@ body {
   flex-wrap: wrap; /* 화면이 작아지면 줄바꿈 */
   align-items: center;
   justify-content: center;
-  background-color: #1a1a1a;
+  /* img 폴더의 cleanwaterchild.jpg 이미지를 배경으로 사용합니다 */
+  background-image: url('img/cleanwaterchild.jpg'); /* 이미지 경로 수정 */
+  background-size: cover; /* 이미지를 영역에 맞게 채웁니다 */
+  background-position: center; /* 이미지를 가운데 정렬 */
   color: #fff;
   padding: 40px 16px;
   text-align: left;
