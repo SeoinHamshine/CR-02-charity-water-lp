@@ -147,9 +147,13 @@ body:has(.about-section) {
 
 /* 히어로 이미지 스타일 */
 .hero-image img {
-  max-width: 300px;
+  width: 100vw;
+  max-width: 100vw;
+  height: 400px;
+  object-fit: cover;
   border-radius: 10px;
   margin-top: 24px;
+  display: block;
 }
 
 /* 임팩트(영향) 섹션 스타일 */
@@ -410,13 +414,27 @@ body:has(.about-section) {
 
 /* About Us 페이지의 이미지 바 스타일 - 더 두껍고 넓게 */
 .about-bar-image img {
-  width: 100%;
-  max-width: 800px;
+  width: 100vw;
+  max-width: 100%;
   height: 400px;
   object-fit: cover;
   display: block;
   border-radius: 10px 10px 0 0;
-  margin: 0 auto 8px auto; /* 이미지 아래 여백을 줄여 텍스트를 위로 */
+  margin: 0 auto 0px auto;
+}
+
+/* About Us의 Why It Matters 섹션도 기존 임팩트 스타일 사용 */
+/* ...existing code... */
+
+/* 홈(메인) 페이지 히어로 이미지 전체 너비로 */
+.hero-image img {
+  width: 100vw;
+  max-width: 100vw;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-top: 24px;
+  display: block;
 }
 
 /* 반응형: 화면이 좁아지면 세로로 쌓기 */
