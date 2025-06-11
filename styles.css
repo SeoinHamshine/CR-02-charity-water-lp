@@ -13,6 +13,22 @@ body {
   padding: 0;
 }
 
+/* About Us 페이지에만 배경 이미지를 적용합니다 */
+body {
+  /* ...existing code... */
+}
+
+/* About Us 페이지에서만 배경 이미지를 적용할 수 있도록 선택자 추가 */
+body:has(.about-section) {
+  background-image: url('img/image2.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* .about-section 배경은 흰색으로 유지하여 내용이 잘 보이게 합니다 */
+/* ...existing code... */
+
 /* 네비게이션 바 스타일 */
 .navbar {
   display: flex;
@@ -226,7 +242,7 @@ body {
 
 /* 폼 제목 색상 변경 */
 .donation-heading {
-  color: #2E9DF7; /* 지정된 파랑색 */
+  color: #003366; /* 지정된 파랑색 */
   font-weight: bold;
   margin-top: 0;
   margin-bottom: 18px;
