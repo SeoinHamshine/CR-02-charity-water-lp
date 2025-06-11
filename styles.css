@@ -293,63 +293,41 @@ body:has(.about-section) {
   position: relative;
   min-height: 100vh;
   width: 100%;
-  background-image: url('img/image2.jpg');
-  background-size: cover;
-  background-position: 65% center; /* 이미지를 오른쪽으로 조금 이동 */
-  background-repeat: no-repeat;
-  display: flex;
-  align-items: flex-start; /* 텍스트를 위쪽에 배치 */
-  justify-content: flex-start; /* 텍스트를 왼쪽에 배치 */
-}
-
-/* 텍스트 박스 스타일: 반투명 배경, 왼쪽 상단에 위치 */
-.about-text {
-  background: rgba(255,255,255,0.80); /* 반투명 흰색 */
-  color: #222;
-  max-width: 420px;
-  margin: 48px 0 0 40px; /* 왼쪽 위에 여백 */
-  padding: 28px 22px;
-  border-radius: 14px;
-  box-shadow: 0 2px 8px rgba(46,157,247,0.07);
-}
-
-/* 제목 색상 */
-.about-text h2 {
-  color: #003366;
-  margin-top: 0;
-  margin-bottom: 14px;
-}
-
-/* Why It Matters 제목만 아래로 더 내리기 */
-.about-text h2:nth-of-type(2) {
-  margin-top: 32px; /* 두 번째 h2(Why It Matters)에만 위쪽 여백 추가 */
-}
-
-/* Why It Matters 항목 스타일 */
-.about-text .impact-grid {
+  background: none; /* 배경 이미지는 아래에서 별도 처리 */
   display: flex;
   flex-direction: column;
-  gap: 4px; /* 줄 간격을 줄임 */
-  align-items: flex-start;
-  margin-top: 18px;
-}
-.about-text .impact-item h3 {
-  color: #2E9DF7; /* 파랑색으로 변경 */
-  font-size: 1.1rem;
-  margin-bottom: 4px;
-}
-.about-text .impact-item p {
-  color: #333;
-  margin: 0 0 8px 0;
-  font-size: 1rem;
+  align-items: center;
+  justify-content: center;
 }
 
-/* 슬라이드 카드 컨테이너 */
+/* About Us 전체 배경을 어두운 파랑(#003366)으로, 텍스트는 흰색으로 */
+.about-dark-bg {
+  background: #003366;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 카드와 이미지를 감싸는 래퍼: 가로 배치, 카드와 이미지 모두 더 크게 */
+.about-slider-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 슬라이드 카드 컨테이너: 왼쪽, 더 크게 */
 .about-slider {
   width: 100%;
-  max-width: 420px;
+  max-width: 520px;   /* 더 큰 카드 */
+  min-width: 320px;
   overflow: hidden;
   position: relative;
+  margin: 0 40px 0 0; /* 오른쪽에 여백 */
+  z-index: 2;
 }
 
 /* 슬라이드 카드들을 가로로 나열 */
@@ -367,7 +345,7 @@ body:has(.about-section) {
 
 /* 슬라이드 내 텍스트 박스 스타일 */
 .about-slide-content {
-  background: rgba(255,255,255,0.80);
+  background: rgba(255,255,255,0.90);
   color: #222;
   border-radius: 14px;
   box-shadow: 0 2px 8px rgba(46,157,247,0.07);
@@ -381,54 +359,43 @@ body:has(.about-section) {
   margin-bottom: 14px;
 }
 
+/* Our Value, Why It Matters 제목에 노란색 적용 */
+.about-content-text h2 {
+  color: #FFC907;
+  margin-top: 0;
+  margin-bottom: 18px;
+}
+
 /* Why It Matters 제목만 아래로 더 내리기 */
-.about-slide-content h2.why {
+.about-content-text h2:nth-of-type(2) {
   margin-top: 32px;
 }
 
-/* Why It Matters 항목 스타일 */
-.about-slide-content .impact-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  align-items: flex-start;
-  margin-top: 18px;
-}
-.about-slide-content .impact-item h3 {
-  color: #2E9DF7;
-  font-size: 1.1rem;
-  margin-bottom: 4px;
-}
-.about-slide-content .impact-item p {
-  color: #333;
-  margin: 0 0 8px 0;
-  font-size: 1rem;
+/* Health, Education, Economic Growth 텍스트에 노란색 배경과 진한 파랑 글자색 적용 */
+.about-content-text p strong {
+  background: #FFC907;
+  color: #003366;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-weight: normal;
 }
 
-/* 슬라이드 네비게이션 버튼 */
-.about-slider-btns {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  margin-top: 18px;
-}
-.about-slider-btn {
-  background: #2E9DF7;
-  color: #fff;
-  border: none;
-  border-radius: 50%;
-  width: 32px;
-  height: 32px;
-  font-size: 1.2rem;
-  cursor: pointer;
-  transition: background 0.2s;
-}
-.about-slider-btn:disabled {
-  background: #b3e0fc;
-  cursor: default;
+/* 각 항목 설명은 밝은 노란색(#FFF7E1) 글자색 */
+.about-content-text p {
+  color: #FFF7E1;
 }
 
 /* 반응형: 화면이 좁아지면 세로로 쌓기 */
+@media (max-width: 900px) {
+  .about-slider-wrapper {
+    flex-direction: column;
+  }
+  .about-slider-image {
+    margin-left: 0;
+    margin-top: 24px;
+  }
+}
+
 @media (max-width: 700px) {
   .donation-main {
     flex-direction: column;
@@ -458,5 +425,25 @@ body:has(.about-section) {
   }
   .about-slide-content {
     padding: 16px 8px;
+  }
+  .about-slider-image {
+    width: 98vw;
+    height: 120px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .about-slider {
+    max-width: 98vw;
+    margin: 0 0 32px 0;
+  }
+  .about-slider-image {
+    width: 98vw;
+    height: 180px;
+    margin-left: 0;
+    margin-top: 24px;
+  }
+  .about-slider-wrapper {
+    flex-direction: column;
   }
 }
