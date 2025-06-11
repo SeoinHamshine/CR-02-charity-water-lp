@@ -53,10 +53,9 @@ body:has(.about-section) {
   padding: 40px 16px;
   text-align: left;
 }
-
 /* About Us 페이지의 히어로 섹션에만 다른 이미지를 사용 */
 .about-hero {
-  background-image: url('img/image2.jpg');
+  background-image: none;
   background-size: cover;
   background-position: center;
 }
@@ -407,6 +406,17 @@ body:has(.about-section) {
   object-fit: cover;
   box-shadow: 0 2px 12px rgba(46,157,247,0.12);
   display: block;
+}
+
+/* About Us 페이지의 이미지 바 스타일 - 더 두껍고 넓게 */
+.about-bar-image img {
+  width: 100%;
+  max-width: 800px;
+  height: 400px;
+  object-fit: cover;
+  display: block;
+  border-radius: 10px 10px 0 0;
+  margin: 0 auto 8px auto; /* 이미지 아래 여백을 줄여 텍스트를 위로 */
 }
 
 /* 반응형: 화면이 좁아지면 세로로 쌓기 */
