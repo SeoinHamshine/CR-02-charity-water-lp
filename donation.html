@@ -76,6 +76,9 @@
       e.preventDefault(); // 폼 제출 막기
 
       // 폼과 폼 영역 전체를 숨깁니다
+      document.getElementById('donationForm').style.display = 'none';
+
+      // confetti와 메시지 영역 보이기
       document.getElementById('confetti-area').style.display = 'block';
 
       // confetti 애니메이션 실행 (canvas-confetti 사용)
@@ -85,12 +88,9 @@
         origin: { y: 0.6 }
       });
 
-      // 랜덤 메시지 보여주기
+      // 랜덤 메시지 보여주기 (가운데, 크게)
       const msg = messages[Math.floor(Math.random() * messages.length)];
       document.getElementById('thank-message').textContent = msg;
-
-      // 폼 숨기기
-      document.getElementById('donationForm').style.display = 'none';
     });
   </script>
 </body>
