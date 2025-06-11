@@ -288,19 +288,60 @@ body:has(.about-section) {
   margin: 40px auto;
 }
 
-/* 화면이 넓을 때 임팩트 항목을 가로로 나열 */
-@media (min-width: 768px) {
-  .hero {
-    flex-wrap: nowrap;
-    justify-content: space-between;
-  }
-  .hero-image {
-    margin-left: 32px;
-  }
-  .impact-grid {
-    flex-direction: row;
-    justify-content: center;
-  }
+/* About Us 배경 이미지와 텍스트 배치 */
+.about-bg {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  background-image: url('img/image2.jpg');
+  background-size: cover;
+  background-position: 65% center; /* 이미지를 오른쪽으로 조금 이동 */
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: flex-start; /* 텍스트를 위쪽에 배치 */
+  justify-content: flex-start; /* 텍스트를 왼쪽에 배치 */
+}
+
+/* 텍스트 박스 스타일: 반투명 배경, 왼쪽 상단에 위치 */
+.about-text {
+  background: rgba(255,255,255,0.80); /* 반투명 흰색 */
+  color: #222;
+  max-width: 420px;
+  margin: 48px 0 0 40px; /* 왼쪽 위에 여백 */
+  padding: 28px 22px;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(46,157,247,0.07);
+}
+
+/* 제목 색상 */
+.about-text h2 {
+  color: #003366;
+  margin-top: 0;
+  margin-bottom: 14px;
+}
+
+/* Why It Matters 제목만 아래로 더 내리기 */
+.about-text h2:nth-of-type(2) {
+  margin-top: 32px; /* 두 번째 h2(Why It Matters)에만 위쪽 여백 추가 */
+}
+
+/* Why It Matters 항목 스타일 */
+.about-text .impact-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 4px; /* 줄 간격을 줄임 */
+  align-items: flex-start;
+  margin-top: 18px;
+}
+.about-text .impact-item h3 {
+  color: #2E9DF7; /* 파랑색으로 변경 */
+  font-size: 1.1rem;
+  margin-bottom: 4px;
+}
+.about-text .impact-item p {
+  color: #333;
+  margin: 0 0 8px 0;
+  font-size: 1rem;
 }
 
 /* 반응형: 화면이 좁아지면 세로로 쌓기 */
@@ -318,5 +359,14 @@ body:has(.about-section) {
   }
   .donation-form-section {
     border-radius: 0 0 12px 12px;
+  }
+  /* 반응형: 화면이 좁을 때 텍스트 박스 크기 조정 */
+  .about-text {
+    max-width: 98vw;
+    margin: 24px 4px 0 4px;
+    padding: 16px 8px;
+  }
+  .about-bg {
+    background-position: center; /* 모바일에서는 중앙 정렬 */
   }
 }
