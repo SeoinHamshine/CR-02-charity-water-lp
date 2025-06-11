@@ -344,6 +344,90 @@ body:has(.about-section) {
   font-size: 1rem;
 }
 
+/* 슬라이드 카드 컨테이너 */
+.about-slider {
+  width: 100%;
+  max-width: 420px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* 슬라이드 카드들을 가로로 나열 */
+.about-slides {
+  display: flex;
+  transition: transform 0.4s;
+}
+
+/* 각 슬라이드(카드) 스타일 */
+.about-slide {
+  min-width: 100%;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+/* 슬라이드 내 텍스트 박스 스타일 */
+.about-slide-content {
+  background: rgba(255,255,255,0.80);
+  color: #222;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(46,157,247,0.07);
+  padding: 28px 22px;
+}
+
+/* 슬라이드 내 제목 스타일 */
+.about-slide-content h2 {
+  color: #003366;
+  margin-top: 0;
+  margin-bottom: 14px;
+}
+
+/* Why It Matters 제목만 아래로 더 내리기 */
+.about-slide-content h2.why {
+  margin-top: 32px;
+}
+
+/* Why It Matters 항목 스타일 */
+.about-slide-content .impact-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: flex-start;
+  margin-top: 18px;
+}
+.about-slide-content .impact-item h3 {
+  color: #2E9DF7;
+  font-size: 1.1rem;
+  margin-bottom: 4px;
+}
+.about-slide-content .impact-item p {
+  color: #333;
+  margin: 0 0 8px 0;
+  font-size: 1rem;
+}
+
+/* 슬라이드 네비게이션 버튼 */
+.about-slider-btns {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 18px;
+}
+.about-slider-btn {
+  background: #2E9DF7;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.about-slider-btn:disabled {
+  background: #b3e0fc;
+  cursor: default;
+}
+
 /* 반응형: 화면이 좁아지면 세로로 쌓기 */
 @media (max-width: 700px) {
   .donation-main {
@@ -368,5 +452,11 @@ body:has(.about-section) {
   }
   .about-bg {
     background-position: center; /* 모바일에서는 중앙 정렬 */
+  }
+  .about-slider {
+    max-width: 98vw;
+  }
+  .about-slide-content {
+    padding: 16px 8px;
   }
 }

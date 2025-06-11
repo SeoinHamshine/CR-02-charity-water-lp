@@ -19,29 +19,95 @@
 
   <!-- 배경 이미지 위에 텍스트를 올립니다. -->
   <div class="about-bg">
-    <div class="about-text">
-      <!-- 가치 제안 -->
-      <h2>Our Value</h2>
-      <p>
-        We provide clean and safe drinking water to children and women in need that changes everything—health, education, and economic growth. Unlike other organizations that just ask for donations, charity: water educates about the global water crisis so the next generation proactively leads direct actions with us.
-      </p>
-      <!-- Why It Matters 섹션 -->
-      <h2>Why It Matters</h2>
-      <div class="impact-grid">
-        <div class="impact-item">
-          <h3>Health</h3>
-          <p>Clean water prevents deadly diseases, giving children a chance to grow up strong and healthy.</p>
+    <!-- 슬라이드 카드 컨테이너 -->
+    <div class="about-slider">
+      <div class="about-slides" id="aboutSlides">
+        <!-- 첫 번째 카드: Our Value -->
+        <div class="about-slide">
+          <div class="about-slide-content">
+            <h2>Our Value</h2>
+            <p>
+              We provide clean and safe drinking water to children and women in need that changes everything—health, education, and economic growth. Unlike other organizations that just ask for donations, charity: water educates about the global water crisis so the next generation proactively leads direct actions with us.
+            </p>
+          </div>
         </div>
-        <div class="impact-item">
-          <h3>Education</h3>
-          <p>Girls no longer miss school fetching water—unlocking brighter futures for entire communities.</p>
+        <!-- 두 번째 카드: Health -->
+        <div class="about-slide">
+          <div class="about-slide-content">
+            <h2>Health</h2>
+            <p>Clean water prevents deadly diseases, giving children a chance to grow up strong and healthy.</p>
+          </div>
         </div>
-        <div class="impact-item">
-          <h3>Economic Growth</h3>
-          <p>Water access empowers women and communities to build better livelihoods and futures.</p>
+        <!-- 세 번째 카드: Education -->
+        <div class="about-slide">
+          <div class="about-slide-content">
+            <h2>Education</h2>
+            <p>Girls no longer miss school fetching water—unlocking brighter futures for entire communities.</p>
+          </div>
         </div>
+        <!-- 네 번째 카드: Economic Growth -->
+        <div class="about-slide">
+          <div class="about-slide-content">
+            <h2>Economic Growth</h2>
+            <p>Water access empowers women and communities to build better livelihoods and futures.</p>
+          </div>
+        </div>
+      </div>
+      <!-- 슬라이드 네비게이션 버튼 -->
+      <div class="about-slider-btns">
+        <button class="about-slider-btn" id="aboutPrev" aria-label="Previous slide">&lt;</button>
+        <button class="about-slider-btn" id="aboutNext" aria-label="Next slide">&gt;</button>
       </div>
     </div>
   </div>
+  <script>
+    // 슬라이드 기능을 위한 간단한 자바스크립트
+    const slides = document.getElementById('aboutSlides');
+    const prevBtn = document.getElementById('aboutPrev');
+    const nextBtn = document.getElementById('aboutNext');
+    let currentSlide = 0;
+    const totalSlides = slides.children.length;
+
+    function updateSlide() {
+      slides.style.transform = 'translateX(' + (-100 * currentSlide) + '%)';
+      prevBtn.disabled = currentSlide === 0;
+      nextBtn.disabled = currentSlide === totalSlides - 1;
+    }
+
+    prevBtn.addEventListener('click', function() {
+      if (currentSlide > 0) {
+        currentSlide--;
+        updateSlide();
+      }
+    });
+
+    nextBtn.addEventListener('click', function() {
+      if (currentSlide < totalSlides - 1) {
+        currentSlide++;
+        updateSlide();
+      }
+    });
+
+    // 터치(스와이프) 지원 - 초보자용 간단 버전
+    let startX = null;
+    slides.addEventListener('touchstart', function(e) {
+      startX = e.touches[0].clientX;
+    });
+    slides.addEventListener('touchend', function(e) {
+      if (startX === null) return;
+      let endX = e.changedTouches[0].clientX;
+      if (endX - startX > 50 && currentSlide > 0) {
+        currentSlide--;
+        updateSlide();
+      } else if (startX - endX > 50 && currentSlide < totalSlides - 1) {
+        currentSlide++;
+        updateSlide();
+      }
+      startX = null;
+    });
+
+    // 처음 슬라이드 상태로 초기화
+    updateSlide();
+  </script>
 </body>
 </html>
