@@ -175,6 +175,93 @@ body {
   line-height: 1.4;
 }
 
+/* 기부 폼 섹션 스타일 */
+.donation-form-section {
+  background: #fff;
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 24px 16px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(46, 157, 247, 0.07);
+  text-align: left;
+}
+
+/* 기부 페이지 메인 컨테이너: 이미지와 폼을 가로로 배치합니다 */
+.donation-main {
+  display: flex; /* 가로 배치 */
+  max-width: 900px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(46, 157, 247, 0.07);
+  overflow: hidden;
+}
+
+/* 왼쪽 이미지 영역 (전체의 60%) */
+.donation-image {
+  flex: 6; /* 6:4 비율 중 6 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #EAF6FB; /* 연한 파랑 배경 */
+  min-height: 400px;
+}
+.donation-image img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+/* 오른쪽 폼 영역 (전체의 40%) */
+.donation-form-section {
+  flex: 4; /* 6:4 비율 중 4 */
+  background: #fff;
+  padding: 32px 20px;
+  box-sizing: border-box;
+  border-radius: 0 12px 12px 0;
+  min-width: 260px;
+}
+
+/* 폼 제목 색상 변경 */
+.donation-heading {
+  color: #2E9DF7; /* 지정된 파랑색 */
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 18px;
+  text-align: left;
+}
+
+/* 폼 내부 입력란 스타일 */
+.donation-form label {
+  display: block;
+  margin-top: 14px;
+  margin-bottom: 6px;
+  font-size: 1rem;
+}
+
+.donation-form input[type="text"],
+.donation-form input[type="tel"],
+.donation-form input[type="email"],
+.donation-form input[type="number"] {
+  width: 100%;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  margin-bottom: 8px;
+  box-sizing: border-box;
+}
+
+/* 기부 금액 선택 영역 */
+.donation-amounts label {
+  display: inline-block;
+  margin-right: 12px;
+  font-size: 1rem;
+  margin-bottom: 6px;
+}
+
 /* 화면이 넓을 때 임팩트 항목을 가로로 나열 */
 @media (min-width: 768px) {
   .hero {
@@ -187,5 +274,23 @@ body {
   .impact-grid {
     flex-direction: row;
     justify-content: center;
+  }
+}
+
+/* 반응형: 화면이 좁아지면 세로로 쌓기 */
+@media (max-width: 700px) {
+  .donation-main {
+    flex-direction: column;
+    max-width: 98%;
+  }
+  .donation-image,
+  .donation-form-section {
+    flex: none;
+    width: 100%;
+    min-width: 0;
+    border-radius: 0;
+  }
+  .donation-form-section {
+    border-radius: 0 0 12px 12px;
   }
 }
