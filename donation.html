@@ -75,8 +75,9 @@
     document.getElementById('donationForm').addEventListener('submit', function(e) {
       e.preventDefault(); // 폼 제출 막기
 
-      // 폼과 폼 영역 전체를 숨깁니다
+      // 폼과 이미지 모두 숨깁니다
       document.getElementById('donationForm').style.display = 'none';
+      document.querySelector('.donation-image').style.display = 'none';
 
       // confetti와 메시지 영역 보이기
       document.getElementById('confetti-area').style.display = 'block';
