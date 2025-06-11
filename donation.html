@@ -25,7 +25,7 @@
     <!-- 오른쪽: 폼 영역 (4/10) -->
     <section class="donation-form-section">
       <!-- 제목 색상을 #2E9DF7로 지정 -->
-      <h2 class="donation-heading">Donation Form</h2>
+      <h2 class="donation-heading" id="donationTitle">Donation Now!</h2>
       <form class="donation-form" action="#" method="post" id="donationForm">
         <!-- 이름 입력 -->
         <label for="name">Name</label>
@@ -66,9 +66,9 @@
   <script>
     // 기부 메시지 후보
     const messages = [
-      "You just give children a chance to grow up strong and healthy",
-      "Girls no longer miss their school fetching water",
-      "You are helping women to build better livelihoods and futures"
+      "You just give children a chance to grow up strong and healthy!",
+      "Girls no longer miss their school fetching water!",
+      "You are helping women to build better livelihoods and futures!"
     ];
 
     // 폼 제출 이벤트 처리
@@ -78,6 +78,9 @@
       // 폼과 이미지 모두 숨깁니다
       document.getElementById('donationForm').style.display = 'none';
       document.querySelector('.donation-image').style.display = 'none';
+
+      // "Donation Now!" 제목도 숨깁니다
+      document.getElementById('donationTitle').style.display = 'none';
 
       // confetti와 메시지 영역 보이기
       document.getElementById('confetti-area').style.display = 'block';
