@@ -1,47 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Charity Water Landing Page</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Charity: Water</title>
+  <!-- styles.css 파일을 연결합니다 -->
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <!-- Hero Section: This is the main banner at the top of the page -->
-    <section class="hero">
-        <!-- Main headline -->
-        <h1>Clean Water for Everyone</h1>
-        <!-- Subheadline -->
-        <p>Join us in bringing safe, clean water to communities in need.</p>
-    </section>
+  <!-- 네비게이션 바(상단 메뉴) -->
+  <header class="navbar">
+    <div class="logo">charity: water</div>
+    <nav class="nav-links">
+      <a href="#">Home</a>
+      <a href="#">About Us</a>
+      <a href="#">My Profile</a>
+    </nav>
+  </header>
 
-    <!-- Story Section: This tells the story of the nonprofit -->
-    <section class="story">
-        <h2>Our Story</h2>
-        <p>
-         
-    </section>
+  <!-- 히어로(메인) 섹션 -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>
+        <span class="line white-text">Change</span>
+        <span class="line blue-text">Water <span class="lives">Lives</span></span>
+      </h1>
+      <p>Every child deserves to grow up with access to safe drinking water. Every woman deserves the right to build a better life for her family.</p>
+      <p class="highlight-text">
+        Unlike other organizations, <span class="highlight">charity: water</span> doesn't just ask for donations—we <strong>educate</strong> about the global water crisis so the next generation can <strong>lead real change</strong> with us.
+      </p>
+      <div class="button-group">
+        <a href="#" class="btn btn-yellow">Donate Now</a>
+        <a href="#" class="btn btn-outline">Take Action</a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <!-- 깨끗한 물을 들고 있는 아이의 이미지 -->
+      <img src="https://via.placeholder.com/500x500.png?text=Clean+Water+For+All" alt="Smiling child holding clean water" />
+    </div>
+  </section>
 
-    <!-- Real-World Impact Story Section -->
-    <section class="impact-story">
-        <!-- Section headline -->
-        <h2>Real Impact: Meet Amina</h2>
-        <!-- Container for image and text -->
-        <div class="impact-content">
-            <!-- Impact image -->
-            <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80" alt="Amina smiling with clean water" class="impact-image">
-            <!-- Impact story text -->
-            <p>
-                Amina used to walk miles every day to collect water for her family. Thanks to your support, her village now has a clean water well. Amina can go to school and her family is healthier and happier.
-            </p>
-        </div>
-    </section>
-
-    <!-- Call-to-Action Section: This encourages visitors to take action -->
-    <section class="call-to-action">
-        <h2>Make a Difference</h2>
-        <p>Your support can help save lives. Every donation brings us closer to a world with clean water for all.</p>
-        <a href="#" class="donate-button">Donate Now</a>
-    </section>
+  <!-- 임팩트(영향) 섹션 -->
+  <section class="impact">
+    <h2>Why It Matters</h2>
+    <div class="impact-grid">
+      <div class="impact-item">
+        <h3>Health</h3>
+        <p>Clean water prevents deadly diseases, giving children a chance to grow up strong and healthy.</p>
+      </div>
+      <div class="impact-item">
+        <h3>Education</h3>
+        <p>Girls no longer miss school fetching water—unlocking brighter futures for entire communities.</p>
+      </div>
+      <div class="impact-item">
+        <h3>Economic Growth</h3>
+        <p>Water access empowers women and communities to build better livelihoods and futures.</p>
+      </div>
+    </div>
+  </section>
 </body>
 </html>

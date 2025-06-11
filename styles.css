@@ -1,198 +1,188 @@
-/* charity: water Brand Colors & Fonts
-
-Primary Colors:
-- Yellow:     #FFC907
-- Blue:       #2E9DF7
-
-Secondary Colors:
-- Light Blue: #8BD1CB
-- Green:      #4FCB53
-- Orange:     #FF902A
-- Red:        #F5402C
-- Dark Green: #159A48
-- Pink:       #F16061
-
-Fonts:
-- Proxima Nova
-- Avenir
-
-*/
-
 /* 
-  Charity: Water Landing Page Styles
-  This CSS uses the provided color palette and beginner-friendly styles.
+  charity: water 랜딩 페이지 스타일
+  이 CSS는 초보자를 위해 최대한 간단하게 작성되었습니다.
 */
 
-/* Set up the main font and background color for the whole page */
+/* 전체 페이지의 기본 배경색과 글꼴을 설정합니다 */
 body {
-  background-color: #f4f8fb; /* Soft light blue for a fresh look */
-  font-family: 'Avenir', 'Proxima Nova', Arial, sans-serif;
+  background-color: #fff9ed; /* 밝은 배경색 */
+  color: #333; /* 기본 글자색 */
+  font-family: 'Proxima Nova', Avenir; /* Proxima Nova 사용 */
+  font-weight: normal; /* 기본은 굵지 않게 */
   margin: 0;
   padding: 0;
-  color: #222;
 }
 
-/* Add a slight shadow and rounded corners to each section for depth */
-section {
-  background: #fff; /* White background for sections */
-  border-radius: 12px; /* Rounded corners */
-  box-shadow: 0 2px 8px rgba(46, 157, 247, 0.07); /* Soft blue shadow */
-  margin: 24px 10px; /* Space between sections */
-  padding: 24px 16px;
+/* 네비게이션 바 스타일 */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  background-color: #fff9ed;
 }
 
-/* Hero Section Styles */
-.hero {
-  position: relative; /* Needed for overlay */
-  /* Set a background image that covers the whole section */
-  background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1500&q=80');
-  background-size: cover;      /* Make the image cover the whole area */
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat;
-  color: #fff;                 /* White text for contrast */
-  text-align: center;          /* Center the text */
-  padding: 60px 20px;          /* Add space above and below */
-  border-radius: 0 0 16px 16px; /* Only round bottom corners */
-
-  /* Add a dark overlay for better text readability */
-  /* This uses a simple linear-gradient overlay */
-  background-blend-mode: darken;
-  background-color: rgba(46, 157, 247, 0.45); /* Blue overlay */
+/* 로고 스타일 */
+.logo {
+  font-size: 1.5rem;
 }
 
-/* Make the headline bold and modern */
-.hero h1 {
-  font-size: 2.5em;
-  font-weight: bold;
-  letter-spacing: 1px;
-  margin-bottom: 15px;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.15); /* Soft shadow for readability */
-}
-
-/* Style the subheadline */
-.hero p {
-  font-size: 1.2em;
-  margin-top: 0;
-  text-shadow: 0 1px 4px rgba(0,0,0,0.12);
-}
-
-/* Story Section Styles */
-.story {
-  background-color: #8BD1CB; /* Secondary Light Blue */
-  color: #222;
-  text-align: center;
-  padding: 30px 20px;
-}
-
-/* Add accent color to section headings */
-h2 {
-  color: #2E9DF7; /* Primary blue */
-  margin-top: 0;
-  font-weight: bold;
-}
-
-/* Call-to-Action Section Styles */
-.call-to-action {
-  background-color: #FFC907; /* Primary Yellow */
-  color: #222;
-  text-align: center;
-  padding: 30px 20px;
-}
-
-/* Style the impact story image */
-.impact-image {
-  width: 100%;
-  max-width: 320px;
-  border-radius: 10px;
-  margin-bottom: 16px;
-  box-shadow: 0 2px 8px rgba(46, 157, 247, 0.10);
-}
-
-/* Donate Button Styles */
-.donate-button {
-  display: inline-block;
-  background-color: #4FCB53; /* Green */
-  color: #fff;
-  padding: 14px 32px;
+/* 네비게이션 링크 스타일 */
+.nav-links a {
+  margin-left: 20px;
   text-decoration: none;
-  border-radius: 6px;
-  font-weight: bold;
-  font-size: 1.1em;
+  color: #00214d;
+}
+
+/* 히어로(메인) 섹션 스타일 */
+.hero {
+  display: flex;
+  flex-wrap: wrap; /* 화면이 작아지면 줄바꿈 */
+  align-items: center;
+  justify-content: center;
+  background-color: #1a1a1a;
+  color: #fff;
+  padding: 40px 16px;
+  text-align: left;
+}
+
+/* 히어로 텍스트 부분 */
+.hero-text {
+  max-width: 600px;
+}
+
+/* 히어로 제목 스타일 */
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 16px;
+  line-height: 1.1;
+  text-align: center;
+}
+
+/* 제목의 색상 강조 */
+.white-text {
+  color: #fff;
+}
+.blue-text {
+  color: #8BD1CB; /* 'water'와 'lives'에 적용할 밝은 파랑색 */
+}
+.lives {
+  margin-left: 20px;
+  color: #8BD1CB; /* 'lives'에도 같은 색상 적용 */
+}
+
+/* 히어로 설명문 스타일 */
+.hero p {
+  margin-top: 8px;
+  margin-bottom: 12px;
+  line-height: 1.5;
+  color: #ddd;
+  font-size: 1.1rem;
+}
+
+/* 강조 텍스트 스타일 */
+.highlight {
+  color: #f4c10f;
+}
+.highlight-text {
+  color: #fff;
+  background: rgba(244, 193, 15, 0.1);
+  padding: 8px 16px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+/* 버튼 그룹 스타일 */
+.button-group {
+  display: flex;
+  gap: 12px;
   margin-top: 18px;
-  box-shadow: 0 2px 8px rgba(79, 203, 83, 0.10);
-  transition: background 0.3s, transform 0.2s;
+  justify-content: center;
+}
+
+/* 버튼 스타일 */
+.btn {
+  text-decoration: none;
+  padding: 10px 24px;
+  border-radius: 25px;
+  transition: 0.3s;
   border: none;
   cursor: pointer;
+  font-size: 1rem;
 }
 
-/* Change button color when hovered */
-.donate-button:hover {
-  background-color: #159A48; /* Dark Green */
-  transform: translateY(-2px) scale(1.04); /* Slight lift */
+/* 노란색 버튼 */
+.btn-yellow {
+  background-color: #FFC907; /* CTA 버튼에 지정된 노란색 */
+  color: #333;
+}
+.btn-yellow:hover {
+  background-color: #e0af00; /* 호버 색상은 유지 */
 }
 
-/* Add some spacing between sections */
-section {
-  margin-bottom: 20px;
+/* 테두리만 있는 버튼 */
+.btn-outline {
+  border: 2px solid #f4c10f;
+  color: #f4c10f;
+  background: transparent;
+}
+.btn-outline:hover {
+  background-color: #f4c10f;
+  color: #333;
 }
 
-/* 
-  Media Queries for Responsive Design
-  Media queries help make your website look good on different screen sizes,
-  like phones (small screens) and computers (large screens).
-*/
+/* 히어로 이미지 스타일 */
+.hero-image img {
+  max-width: 300px;
+  border-radius: 10px;
+  margin-top: 24px;
+}
 
-/* This media query applies styles when the screen is 600px wide or less (like on most phones) */
-@media (max-width: 600px) {
-  /* Make hero section padding smaller on small screens */
+/* 임팩트(영향) 섹션 스타일 */
+.impact {
+  background-color: #fff;
+  padding: 32px 16px;
+  text-align: center;
+}
+
+/* 임팩트 섹션 제목 */
+.impact h2 {
+  font-size: 2rem;
+  color: #00214d;
+  margin-bottom: 24px;
+  font-weight: bold;
+}
+
+/* 임팩트 항목들을 세로로 나열 */
+.impact-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+/* 임팩트 항목 스타일 */
+.impact-item h3 {
+  font-size: 1.2rem;
+  color: #f4c10f;
+}
+.impact-item p {
+  color: #333;
+  margin-top: 8px;
+  line-height: 1.4;
+}
+
+/* 화면이 넓을 때 임팩트 항목을 가로로 나열 */
+@media (min-width: 768px) {
   .hero {
-    padding: 32px 8px;
-    font-size: 1em;
+    flex-wrap: nowrap;
+    justify-content: space-between;
   }
-
-  /* Make headline font size smaller so it fits on small screens */
-  .hero h1 {
-    font-size: 1.4em;
+  .hero-image {
+    margin-left: 32px;
   }
-
-  /* Make subheadline font size smaller */
-  .hero p {
-    font-size: 1em;
-  }
-
-  /* Make story and call-to-action sections have less padding */
-  .story,
-  .call-to-action,
-  .donation-section {
-    padding: 14px 8px;
-  }
-
-  /* Make impact story image smaller and stack above the text */
-  .impact-content {
-    display: block; /* Stack items vertically */
-    text-align: center;
-  }
-
-  .impact-image {
-    width: 90%;    /* Make image take up most of the width */
-    max-width: 220px;
-  }
-}
-
-/* This media query applies styles when the screen is wider than 600px (like on tablets and computers) */
-@media (min-width: 601px) {
-  /* Show image and text side by side in the impact story */
-  .impact-content {
-    display: flex;           /* Place items in a row */
-    align-items: center;     /* Vertically center items */
-    justify-content: center; /* Center the whole group */
-    gap: 28px;               /* Space between image and text */
-    text-align: left;
-    max-width: 800px;
-    margin: 0 auto;
-  }
-
-  .impact-image {
-    width: 300px;
+  .impact-grid {
+    flex-direction: row;
+    justify-content: center;
   }
 }
