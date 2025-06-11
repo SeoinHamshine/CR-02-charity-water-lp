@@ -55,12 +55,14 @@
         <button type="submit" class="btn btn-yellow" style="margin-top:16px;">Donate</button>
       </form>
       <!-- confetti와 메시지를 표시할 영역 -->
-      <div id="confetti-area" style="display:none; text-align:center; margin-top:24px;">
-        <div id="confetti" style="font-size:2rem;"></div>
-        <div id="thank-message" style="font-size:1.2rem; font-weight:bold; margin-top:16px;"></div>
+      <div id="confetti-area" style="display:none; width:100%; text-align:center; margin-top:24px;">
+        <!-- 메시지는 가운데, 크게 표시됩니다 -->
+        <div id="thank-message" style="font-size:2rem; margin:60px 0 60px 0; line-height:1.4;"></div>
       </div>
     </section>
   </div>
+  <!-- canvas-confetti 라이브러리 불러오기 (CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
   <script>
     // 기부 메시지 후보
     const messages = [
@@ -69,29 +71,19 @@
       "You are helping women to build better livelihoods and futures"
     ];
 
-    // 간단한 confetti(이모지) 효과 함수
-    function showConfetti() {
-      const confettiDiv = document.getElementById('confetti');
-      let confettiStr = '';
-      // 여러 줄로 confetti 이모지를 만듭니다
-      for (let i = 0; i < 10; i++) {
-        for (let j = 0; j < 20; j++) {
-          confettiStr += (Math.random() > 0.5) ? '🎉' : '✨';
-        }
-        confettiStr += '<br>';
-      }
-      confettiDiv.innerHTML = confettiStr;
-    }
-
     // 폼 제출 이벤트 처리
     document.getElementById('donationForm').addEventListener('submit', function(e) {
       e.preventDefault(); // 폼 제출 막기
 
-      // confetti와 메시지 영역 보이기
+      // 폼과 폼 영역 전체를 숨깁니다
       document.getElementById('confetti-area').style.display = 'block';
 
-      // confetti 보여주기
-      showConfetti();
+      // confetti 애니메이션 실행 (canvas-confetti 사용)
+      confetti({
+        particleCount: 120,
+        spread: 80,
+        origin: { y: 0.6 }
+      });
 
       // 랜덤 메시지 보여주기
       const msg = messages[Math.floor(Math.random() * messages.length)];
