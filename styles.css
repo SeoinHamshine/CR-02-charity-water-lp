@@ -14,20 +14,9 @@ body {
 }
 
 /* About Us 페이지에만 배경 이미지를 적용합니다 */
-body {
-  /* ...existing code... */
-}
-
-/* About Us 페이지에서만 배경 이미지를 적용할 수 있도록 선택자 추가 */
 body:has(.about-section) {
-  background-image: url('img/image2.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  /* 기존 about-section 배경 이미지는 제거 */
 }
-
-/* .about-section 배경은 흰색으로 유지하여 내용이 잘 보이게 합니다 */
-/* ...existing code... */
 
 /* 네비게이션 바 스타일 */
 .navbar {
@@ -300,17 +289,6 @@ body:has(.about-section) {
   justify-content: center;
 }
 
-/* About Us 전체 배경을 어두운 파랑(#003366)으로, 텍스트는 흰색으로 */
-.about-dark-bg {
-  background: #003366;
-  min-height: 100vh;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
 /* 카드와 이미지를 감싸는 래퍼: 가로 배치, 카드와 이미지 모두 더 크게 */
 .about-slider-wrapper {
   display: flex;
@@ -359,30 +337,69 @@ body:has(.about-section) {
   margin-bottom: 14px;
 }
 
+/* About Us 전체 배경을 어두운 파랑(#003366)으로, 텍스트는 흰색으로 */
+.about-dark-bg {
+  /* 이 부분 전체 삭제 또는 비워둡니다 */
+}
+
+/* 카드 대신 텍스트만 중앙에 흰색으로 표시 */
+.about-content-text {
+  /* 이 부분 전체 삭제 또는 비워둡니다 */
+}
+
 /* Our Value, Why It Matters 제목에 노란색 적용 */
 .about-content-text h2 {
-  color: #FFC907;
-  margin-top: 0;
-  margin-bottom: 18px;
+  /* 이 부분 전체 삭제 또는 비워둡니다 */
 }
 
 /* Why It Matters 제목만 아래로 더 내리기 */
 .about-content-text h2:nth-of-type(2) {
-  margin-top: 32px;
+  /* 이 부분 전체 삭제 또는 비워둡니다 */
 }
 
 /* Health, Education, Economic Growth 텍스트에 노란색 배경과 진한 파랑 글자색 적용 */
 .about-content-text p strong {
-  background: #FFC907;
-  color: #003366;
-  padding: 2px 8px;
-  border-radius: 6px;
-  font-weight: normal;
+  /* 이 부분 전체 삭제 또는 비워둡니다 */
 }
 
 /* 각 항목 설명은 밝은 노란색(#FFF7E1) 글자색 */
 .about-content-text p {
-  color: #FFF7E1;
+  /* 이 부분 전체 삭제 또는 비워둡니다 */
+}
+
+/* 슬라이드 네비게이션 버튼 */
+.about-slider-btns {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 18px;
+}
+.about-slider-btn {
+  background: #2E9DF7;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.about-slider-btn:disabled {
+  background: #b3e0fc;
+  cursor: default;
+}
+
+/* 오른쪽 이미지 스타일: 더 크게 */
+.about-slider-image {
+  width: 480px;
+  max-width: 95vw;
+  height: 320px;
+  margin-left: 0;
+  border-radius: 18px;
+  object-fit: cover;
+  box-shadow: 0 2px 12px rgba(46,157,247,0.12);
+  display: block;
 }
 
 /* 반응형: 화면이 좁아지면 세로로 쌓기 */
