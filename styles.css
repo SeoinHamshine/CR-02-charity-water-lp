@@ -7,7 +7,7 @@
 body {
   background-color: #FFF7E1; /* 밝은 배경색 */
   color: #333;
-  font-family: 'Proxima Nova', Avenir;
+  font-family: 'Proxima Nova', Avenir, Arial, Helvetica, sans-serif;
   font-weight: normal;
   margin: 0;
   padding: 0;
@@ -446,14 +446,11 @@ body:has(.about-section) {
     margin-left: 0;
     margin-top: 24px;
   }
-}
-
-@media (max-width: 700px) {
   .hero-text,
   .button-group,
   .subheading-box {
     max-width: 98vw;
-    padding-left: 1em !important; /* 왼쪽 여백을 줄여줍니다 */
+    padding-left: 1em !important;
   }
   .hero-image img {
     width: 98vw !important;
@@ -468,6 +465,25 @@ body:has(.about-section) {
     gap: 10px;
     text-align: left;
     padding-left: 1em !important;
+  }
+  /* Take Actions 페이지 카드와 이미지도 세로로 쌓이게 */
+  .take-actions-flex {
+    flex-direction: column !important;
+    gap: 24px !important;
+    align-items: center !important;
+  }
+  .take-actions-flex section,
+  .take-actions-flex div {
+    margin-left: 0 !important;
+    border-radius: 12px !important;
+    width: 98vw !important;
+    max-width: 98vw !important;
+  }
+  .take-actions-flex img {
+    width: 98vw !important;
+    max-width: 98vw !important;
+    height: 220px !important;
+    border-radius: 12px !important;
   }
 }
 
