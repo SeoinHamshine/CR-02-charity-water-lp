@@ -22,28 +22,39 @@
 
   <!-- 히어로(메인) 섹션 -->
   <section class="hero">
-    <div class="hero-text">
+    <div class="hero-text" style="max-width: 500px; margin-left: 0; margin-right: auto; text-align: left; padding-left: 2cm;">
       <h1 style="margin-bottom: 0; font-size: 3.2rem; line-height: 1.1; text-align: left;">
         <!-- 각 단어 사이에 같은 간격(gap)을 주기 위해 모두 block 요소로 만들고 margin을 사용합니다 -->
         <span class="line white-text" style="display:block; margin-bottom: 0.2em;">Change</span>
         <span class="line blue-text" style="display:block; margin-bottom: 0.2em;">Water</span>
         <span class="line blue-text" style="display:block; margin-bottom: 0.2em;">Lives</span>
       </h1>
-      <!-- 새로운 서브헤딩에 문장 사이에 줄바꿈 추가 -->
-      <p class="highlight-text">
-        Every child deserves to grow up with access to safe drinking water. Every woman deserves the right to build a better life for her family.<br><br>
-        Charity: water provides clean water to change children's and women's lives, including their education, health, rights, and economic growth. Your donation and involvement make water projects more impactful.
-      </p>
-      <div class="button-group">
-        <a href="donation.html" class="btn btn-yellow">Donate Now</a>
-        <a href="about.html" class="btn btn-outline">About Us</a>
-      </div>
     </div>
     <!-- hero-image 삭제 -->
   </section>
 
+  <!-- CTA 버튼을 subheading 바로 위로 이동 -->
+  <div class="button-group" style="max-width: 500px; margin: 24px auto 0 auto; text-align: left; padding-left: 2cm;">
+    <a href="donation.html" class="btn btn-yellow">Donate Now</a>
+    <!-- About Us 버튼의 색상을 파란색(#2E9DF7)으로 변경합니다 -->
+    <a href="about.html" class="btn btn-outline" style="background-color: #2E9DF7; color: white; border: none;">About Us</a>
+  </div>
+
+  <!-- subheading(설명문)을 버튼 아래에 위치 -->
+  <div class="subheading-box" style="max-width: 500px; margin: 12px auto 0 auto; text-align: left;">
+    <p class="highlight-text" style="color: black;">
+      Every child deserves to grow up with access to safe drinking water. Every woman deserves the right to build a better life for her family.<br><br>
+      Charity: water provides clean water to change children's and women's lives, including their education, health, rights, and economic growth. Your donation and involvement make water projects more impactful.
+    </p>
+  </div>
+
   <div class="hero-image" style="margin-top: 32px;">
-    <img src="img/cleanwaterchild.jpg" style="width:400px; height:400px; object-fit:cover; border-radius:10px; display:block; margin:0 auto;" />
+    <!-- 이미지의 크기와 비율이 항상 고정되도록 width, height, object-fit을 사용합니다 -->
+    <img 
+      src="img/cleanwaterchild.jpg" 
+      style="width:400px; height:400px; object-fit:cover; border-radius:10px; display:block; margin:0 auto; max-width:400px; max-height:400px;"
+      alt="Smiling child holding clean water"
+    />
     <div style="font-size: 0.95rem; color: #333; margin-top: 6px; text-align: center;">
       Smiling child holding clean water
     </div>
